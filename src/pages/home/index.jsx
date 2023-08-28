@@ -5,10 +5,16 @@ import { ProductsContext } from "../../Context/Products"
 
 const Home = () => {
 
+    const {products} = useContext(ProductsContext);
+
     return (
         <Layout>
             <div className="grid grid-cols-3 gap-4">
-             <Card />
+             {
+                products.map((item,index)=>(
+                    <Card product={item}/>
+                ))
+             }
             </div>
         </Layout>
     );
