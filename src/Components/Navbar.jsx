@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { ProductsContext } from "../Context/Products";
 
 const Navbar = () => {
+  const {count} = useContext(ProductsContext)
   const activeStyle = "underline underline-offset-4";
 
   return (
@@ -44,7 +47,7 @@ const Navbar = () => {
         <li className="mx-2">
           <NavLink to="/sing-in" className={({ isActive }) => (isActive ? activeStyle : undefined)}>Sing In</NavLink>
         </li>
-        <li className="mx-2">🛒0</li>
+        <li className="mx-2">🛒{count}</li>
       </ul>
     </nav>
   );

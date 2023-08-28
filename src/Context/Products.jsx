@@ -5,14 +5,15 @@ const ProductsContext = createContext();
 
 const ProviderProducts = ({children}) => {
 
-    const [products, setProducts]= useState([])
+    const [products, setProducts]= useState([]);
+    const [count, setCount] = useState(0);
 
     useEffect(()=>{
         getProducts(setProducts)
     },[])
 
     return (
-        <ProductsContext.Provider value={{products}}>
+        <ProductsContext.Provider value={{products, count, setCount}}>
             {children}
         </ProductsContext.Provider>
     )

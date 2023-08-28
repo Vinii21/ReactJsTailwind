@@ -1,14 +1,16 @@
 import { PiPlusBold } from "react-icons/pi";
 import "./style.css"
+import { useContext } from "react";
+import { ProductsContext } from "../Context/Products";
 
 const Card = ({product}) => {
-
+    const {count, setCount} = useContext(ProductsContext)
     const {title, category, description, price, image} = product;
 
     return (
         <div>
         <div className="bg-white relative border border-purple-300 w-60 h-48 transform hover:scale-110 hover:z-10 transition-all duration-300 ease-in rounded-2xl overflow-hidden">
-            <div className="cursor-pointer absolute right-1 top-1 z-20 bg-black w-7 h-7 rounded-2xl flex justify-center items-center">
+            <div onClick={()=>setCount(count + 1)} className="cursor-pointer absolute right-1 top-1 z-20 bg-black w-7 h-7 rounded-2xl flex justify-center items-center">
             <PiPlusBold className="text-base text-white"/>
             </div>
             <img src={image}  className="card"/>
