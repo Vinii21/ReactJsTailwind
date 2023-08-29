@@ -7,6 +7,8 @@ import SingIn from "../singIn";
 import NotFound from "../notFound";
 import './App.css'
 import Navbar from '../../Components/Navbar';
+import ModalProductDetail from "../../Portal/ModalProductDetail";
+import ProductDetail from '../../Portal/ProductDetail';
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -26,6 +28,9 @@ const App = () => {
     <BrowserRouter>
       <Navbar />
       <AppRoutes />
+      <ModalProductDetail>
+        <ProductDetail />
+      </ModalProductDetail>
     </BrowserRouter>
   )
 }
