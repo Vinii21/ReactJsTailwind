@@ -1,8 +1,4 @@
 .modal {
     position: fixed;
-    right: 0;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    background: #0000009a;
+    z-index: 100;
 }

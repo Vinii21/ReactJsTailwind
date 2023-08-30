@@ -7,8 +7,10 @@ import SingIn from "../singIn";
 import NotFound from "../notFound";
 import './App.css'
 import Navbar from '../../Components/Navbar';
-import ModalProductDetail from "../../Portal/ModalProductDetail";
+import Modal from "../../Portal/Modal";
 import ProductDetail from '../../Portal/ProductDetail';
+import { useContext } from 'react';
+import { ProductsContext } from '../../Context/Products';
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -24,13 +26,16 @@ const AppRoutes = () => {
 }
 
 const App = () => {
+  const {showModal} = useContext(ProductsContext)
   return (
     <BrowserRouter>
       <Navbar />
       <AppRoutes />
-      <ModalProductDetail>
-        <ProductDetail />
-      </ModalProductDetail>
+      { showModal &&
+        <Modal>
+          <ProductDetail />
+        </Modal>
+      }
     </BrowserRouter>
   )
 }

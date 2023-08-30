@@ -1,7 +1,7 @@
 import { createPortal } from "react-dom";
 import "./style.css"
 
-const ModalProductDetail = ({children}) => {
+const Modal = ({children}) => {
     return createPortal (
         <div className="modal">
             {children}
@@ -10,4 +10,4 @@ const ModalProductDetail = ({children}) => {
     );
 }
  
-export default ModalProductDetail;
+export default Modal;
